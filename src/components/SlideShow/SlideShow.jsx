@@ -26,22 +26,18 @@ const Wrapper = styled.div`
 const SlideItem = styled.div`
     position: relative;
     display: flex;
+    flex-direction: column; // 기존에는 flex 요소가 center 정렬이었지만, column으로 변경하여 이미지 아래에 텍스트가 오도록 함
     justify-content: center;
     align-items: center;
-    height: 300px;
-    overflow: hidden;
+    height: 300px; // 전체 높이를 증가시켜 텍스트에 공간을 제공
     cursor: pointer;
-
-    &:hover .overlay {
-        opacity: 1; // 마우스 호버 시 오버레이 표시
-    }
+    overflow: hidden;
 
     img {
         width: 100%;
-        height: auto;
-        max-height: 100%; // 이미지 최대 높이 설정
-        object-fit: contain; // 변경된 object-fit 스타일
-        transition: filter 0.3s ease; // 마우스 호버 시 효과 적용
+        height: 100%; // 이미지 높이를 100%에서 80%로 조정하여 아래에 텍스트 공간 마련
+        object-fit: cover;
+        transition: filter 0.3s ease;
     }
 
     .overlay {
@@ -50,25 +46,42 @@ const SlideItem = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); // 투명도 조절 가능한 배경
+        background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         justify-content: center;
         align-items: center;
-        opacity: 0; // 초기에는 숨김
-        transition: opacity 0.3s ease; // 투명도 변화 효과
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
-    .title {
+    .overlay .title {
         color: #fff;
         font-size: 24px;
         font-weight: bold;
         text-align: center;
+        z-index: 1000;
+    }
+
+    .name {
+        color: #333; // 텍스트 색상 설정
+        font-size: 20px; // 텍스트 크기 설정
+        font-weight: bold; // 글자 두께
+        margin-top: 10px; // 상단 여백 조정
     }
 `;
 
 const SlideShow = () => {
     const navigate = useNavigate();
     const [isDragging, setIsDragging] = useState(false);
+    const [overlayVisible, setOverlayVisible] = useState(false);
+
+    const handleMouseEnter = () => {
+        setOverlayVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+        setOverlayVisible(false);
+    };
 
     const settings = {
         dots: false,
@@ -82,7 +95,7 @@ const SlideShow = () => {
         afterChange: () => setIsDragging(false)
     };
 
-    const images = data.flatMap(category => category.items.map(item => item.details));
+    const items = data.flatMap(category => category.items.map(item => item.details));
 
     const handleImageClick = (id) => {
         if (!isDragging) {
@@ -93,11 +106,16 @@ const SlideShow = () => {
     return (
         <Wrapper>
             <Slider {...settings}>
-                {images.map((image) => (
-                    <SlideItem key={image.id} onClick={() => handleImageClick(image.id)}>
-                        <img src={image.src} alt={image.alt} /> 
-                        <div className="overlay">
-                            <div className="title">{image.title}</div>
+                {items.map((item) => (
+                    <SlideItem
+                        key={item.id}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={() => handleImageClick(item.id)}
+                    >
+                        <img src={item.src} alt={item.alt} />
+                        <div className="overlay" style={{ opacity: overlayVisible ? 1 : 0 }}>
+                            <div className="title">ID: {item.id}</div>
                         </div>
                     </SlideItem>
                 ))}
