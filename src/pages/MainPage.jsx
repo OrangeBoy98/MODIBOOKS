@@ -12,8 +12,10 @@ import Best from '../components/common/Best';
 
 const Wrapper = styled.div `
     max-width: 1000px;
+    min-width: 1000px;
     margin: 0 auto;
-`
+`;
+
 function MainPage() {
     return (
         <Router>
