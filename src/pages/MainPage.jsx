@@ -41,6 +41,7 @@ function PageLayout() {
                         <SlideShow />
                         <hr />
                         <Best />
+                        <hr />
                     </>
                 } />
                 <Route path="/detail/:id" element={<DetailPage />} />

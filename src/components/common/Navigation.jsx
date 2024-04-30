@@ -28,15 +28,22 @@ const StyledIcon = styled.div`
 const DropdownMenu = styled.div`
     position: absolute;
     top: 100%;
+    width: 250px;
     right: 0;
     background-color: white;
     border: 1px solid #ccc;
     borderRadius: 5px;
     padding: 10px;
     display: flex;
-    flexDirection: column;
+    flex-direction: row; /* 변경된 부분 */
+    justify-content: space-between;
     gap: 10px;
     zIndex: 1000;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: #333; /* 링크 색상 설정 */
 `;
 
 function Navigation() {
@@ -67,9 +74,9 @@ function Navigation() {
                 </div>
                 {isOpen && (
                     <DropdownMenu>
-                        <Link to="/category" onClick={() => setIsOpen(false)}>카테고리</Link>
-                        <Link to="/services" onClick={() => setIsOpen(false)}>고객센터</Link>
-                        <Link to="/contact" onClick={() => setIsOpen(false)}>이름없음</Link>
+                        <StyledLink to="/category" onClick={() => setIsOpen(false)}>카테고리</StyledLink>
+                        <StyledLink to="/services" onClick={() => setIsOpen(false)}>고객센터</StyledLink>
+                        <StyledLink to="/contact" onClick={() => setIsOpen(false)}>이름없음</StyledLink>
                     </DropdownMenu>
                 )}
             </div>
