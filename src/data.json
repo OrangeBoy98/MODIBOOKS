@@ -1,0 +1,76 @@
+[
+    {
+        "category": "Fantasy",
+        "items": [
+            {
+                "name": "test11",
+                "details": {
+                    "id": "101",
+                    "src": "http://localhost:3000/images/testImg2.jpg",
+                    "alt": "작품 1"
+                }
+            },
+            {
+                "name": "test12",
+                "details": {
+                    "id": "102",
+                    "src": "http://localhost:3000/images/testImg2.jpg",
+                    "alt": "작품 2"
+                }
+            },
+            {
+                "name": "test13",
+                "details": {
+                    "id": "103",
+                    "src": "http://localhost:3000/images/testImg2.jpg",
+                    "alt": "작품 3"
+                }
+            },
+            {
+                "name": "test14",
+                "details": {
+                    "id": "104",
+                    "src": "http://localhost:3000/images/testImg2.jpg",
+                    "alt": "작품 4"
+                }
+            }
+        ]
+    },
+    {
+        "category": "wuxia",
+        "items": [
+            {
+                "name": "test21",
+                "details": {
+                    "id": "201",
+                    "src": "http://localhost:3000/images/testImg2.jpg",
+                    "alt": "작품 2"
+                }
+            },
+            {
+                "name": "test22",
+                "details": {
+                    "id": "202",
+                    "src": "http://localhost:3000/images/testImg2.jpg",
+                    "alt": "작품 3"
+                }
+            },
+            {
+                "name": "test23",
+                "details": {
+                    "id": "203",
+                    "src": "http://localhost:3000/images/testImg2.jpg",
+                    "alt": "작품 4"
+                }
+            },
+            {
+                "name": "test24",
+                "details": {
+                    "id": "204",
+                    "src": "http://localhost:3000/images/testImg2.jpg",
+                    "alt": "작품 1"
+                }
+            }
+        ]
+    }
+]
