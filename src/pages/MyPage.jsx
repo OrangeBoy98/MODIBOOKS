@@ -4,7 +4,7 @@ import CommentsSection from '../components/mypage/CommentsSection';
 import Modal from 'react-modal';
 import '../assets/Mypage.css'; 
 
-const Mypage = () => {
+const MyPage = () => {
     const [favoriteBooks, setFavoriteBooks] = useState([
         { id: 1, title: '총균쇠', author: '재레드 다이아몬드', image: '/images/book1.jpg' },
         { id: 2, title: '나는 읽고 쓰고 버린다', author: '손웅정', image: '/images/book2.jpg' },
@@ -64,4 +64,4 @@ const Mypage = () => {
     );
 };
 
-export default Mypage;
+export default MyPage;

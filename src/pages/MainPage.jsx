@@ -12,7 +12,7 @@ import DetailPage3 from './DetailPage3';
 import styled from 'styled-components';
 import Best from '../components/common/Best';
 import Footer from '../components/common/Footer';
-import Mypage from './Mypage';
+import MyPage from './MyPage';
 
 const Wrapper = styled.div `
     width: 1000px;
@@ -49,7 +49,7 @@ function PageLayout() {
                         <Footer />
                     </>
                 } />
-                <Route path="/mypage" element={<Mypage />} />
+                <Route path="/mypage" element={<MyPage />} />
                 <Route path="/detail/:id" element={<DetailPage />} />
                 <Route path="/detail2/:id" element={<DetailPage2 />} />
                 <Route path="/detail3/:id" element={<DetailPage3 />} />
