@@ -9,6 +9,7 @@ import BackButton from '../components/common/BackButton';
 import DetailPage from './DetailPage';
 import styled from 'styled-components';
 import Best from '../components/common/Best';
+import Footer from '../components/common/Footer';
 
 const Wrapper = styled.div `
     max-width: 1000px;
@@ -42,6 +43,7 @@ function PageLayout() {
                         <hr />
                         <Best />
                         <hr />
+                        <Footer />
                     </>
                 } />
                 <Route path="/detail/:id" element={<DetailPage />} />

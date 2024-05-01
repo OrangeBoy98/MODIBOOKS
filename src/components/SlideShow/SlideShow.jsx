@@ -74,12 +74,15 @@ const SlideShow = () => {
     const navigate = useNavigate();
     const [isDragging, setIsDragging] = useState(false);
     const [overlayVisible, setOverlayVisible] = useState(false);
+    const [showId, setShowId] = useState(null);
 
-    const handleMouseEnter = () => {
+    const handleMouseEnter = (id) => {
+        setShowId(id);
         setOverlayVisible(true);
     };
 
     const handleMouseLeave = () => {
+        setShowId(null);
         setOverlayVisible(false);
     };
 
@@ -109,13 +112,13 @@ const SlideShow = () => {
                 {items.map((item) => (
                     <SlideItem
                         key={item.id}
-                        onMouseEnter={handleMouseEnter}
+                        onMouseEnter={()=>{handleMouseEnter(item.id)}}
                         onMouseLeave={handleMouseLeave}
                         onClick={() => handleImageClick(item.id)}
                     >
                         <img src={item.src} alt={item.alt} />
-                        <div className="overlay" style={{ opacity: overlayVisible ? 1 : 0 }}>
-                            <div className="title">ID: {item.id}</div>
+                        <div className="overlay" style={{ opacity: overlayVisible && showId === item.id ? 1 : 0 }}>
+                            <div className="title">NAME: {item.alt} <br /> ID: {item.id}</div>
                         </div>
                     </SlideItem>
                 ))}

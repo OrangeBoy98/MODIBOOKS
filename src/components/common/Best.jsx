@@ -20,7 +20,7 @@ const Grid = styled.div`
 const Item = styled.div`
   display: flex;
   align-items: center;
-  background: #f4f4f4;
+  background: #fff;
   padding: 10px;
   border-radius: 5px;
 `;
