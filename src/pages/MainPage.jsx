@@ -13,7 +13,7 @@ import Footer from '../components/common/Footer';
 import Mypage from './Mypage';
 
 const Wrapper = styled.div `
-    max-width: 1000px;
+    width: 1000px;
     min-width: 1000px;
     margin: 0 auto;
 `;

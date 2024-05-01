@@ -48,7 +48,6 @@ const SlideItem = styled.div`
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         opacity: 0;
@@ -57,18 +56,18 @@ const SlideItem = styled.div`
 
     .overlay .title {
         color: #fff;
-        font-size: 20px;
+        font-size: 24px;
         font-weight: bold;
         text-align: center;
         z-index: 1000;
     }
-    .overlay .name {
-        color: #fff;
-        font-size: 16px;
-        text-align: center;
-        z-index: 1000;
-    }
 
+    .name {
+        color: #333; // 텍스트 색상 설정
+        font-size: 20px; // 텍스트 크기 설정
+        font-weight: bold; // 글자 두께
+        margin-top: 10px; // 상단 여백 조정
+    }
 `;
 
 const SlideShow = () => {
@@ -120,7 +119,6 @@ const SlideShow = () => {
                         <img src={item.src} alt={item.alt} />
                         <div className="overlay" style={{ opacity: overlayVisible && showId === item.id ? 1 : 0 }}>
                             <div className="title">{item.alt}</div>
-                            <div className="name">{item.author}</div>
                         </div>
                     </SlideItem>
                 ))}

@@ -3,35 +3,45 @@
         "category": "Fantasy",
         "items": [
             {
-                "name": "test11",
+                "name": "개정판 | 류츠신 삼체 3부작 1권",
                 "details": {
                     "id": "101",
-                    "src": "http://localhost:3000/images/testImg2.jpg",
-                    "alt": "작품 1"
+                    "src": "https://img.ridicdn.net/cover/4755000137/xxlarge?dpi=xxhdpi#1",
+                    "alt": "류츠신 삼체 1권",
+                    "author": "류츠신 저",
+                    "publisher": "자음과모음 출판",
+                    "rating": 5
                 }
             },
             {
                 "name": "test12",
                 "details": {
                     "id": "102",
-                    "src": "http://localhost:3000/images/testImg2.jpg",
-                    "alt": "작품 2"
+                    "src": "https://via.placeholder.com/200x300.jpg",
+                    "alt": "작품 2",
+                    "author": "b",
+                    "publisher": "자음과모음 출판"
+                    
                 }
             },
             {
                 "name": "test13",
                 "details": {
                     "id": "103",
-                    "src": "http://localhost:3000/images/testImg2.jpg",
-                    "alt": "작품 3"
+                    "src": "https://via.placeholder.com/200x300.jpg",
+                    "alt": "작품 3",
+                    "author": "c 저",
+                    "publisher": "자음과모음 출판"
                 }
             },
             {
                 "name": "test14",
                 "details": {
                     "id": "104",
-                    "src": "http://localhost:3000/images/testImg2.jpg",
-                    "alt": "작품 4"
+                    "src": "https://via.placeholder.com/200x300.jpg",
+                    "alt": "작품 4",
+                    "author": "d 저",
+                    "publisher": "자음과모음 출판"
                 }
             }
         ]
@@ -43,32 +53,40 @@
                 "name": "test21",
                 "details": {
                     "id": "201",
-                    "src": "http://localhost:3000/images/testImg2.jpg",
-                    "alt": "작품 2"
+                    "src": "https://via.placeholder.com/200x300.jpg",
+                    "alt": "작품 2",
+                    "author": "e 저",
+                    "publisher": "자음과모음 출판"
                 }
             },
             {
                 "name": "test22",
                 "details": {
                     "id": "202",
-                    "src": "http://localhost:3000/images/testImg2.jpg",
-                    "alt": "작품 3"
+                    "src": "https://via.placeholder.com/200x300.jpg",
+                    "alt": "작품 3",
+                    "author": "f 저",
+                    "publisher": "자음과모음 출판"
                 }
             },
             {
                 "name": "test23",
                 "details": {
                     "id": "203",
-                    "src": "http://localhost:3000/images/testImg2.jpg",
-                    "alt": "작품 4"
+                    "src": "https://via.placeholder.com/200x300.jpg",
+                    "alt": "작품 4",
+                    "author": "g 저",
+                    "publisher": "자음과모음 출판"
                 }
             },
             {
                 "name": "test24",
                 "details": {
                     "id": "204",
-                    "src": "http://localhost:3000/images/testImg2.jpg",
-                    "alt": "작품 1"
+                    "src": "https://via.placeholder.com/200x300.jpg",
+                    "alt": "작품 1",
+                    "author": "h 저",
+                    "publisher": "자음과모음 출판"
                 }
             }
         ]

@@ -70,8 +70,9 @@ function Best() {
       <Grid>
         {allItems.map((item, index) => (
           <Item key={index}>
-            <Rank>{index + 1}</Rank>
+            
             <ItemImage src={item.details.src} alt={item.details.alt} />
+            <Rank>{index + 1}</Rank>
             <ItemDetails>
               <ItemTitle>{item.name}</ItemTitle>
               <ItemAuthor>{item.details.author || '저자 정보 없음'}</ItemAuthor>

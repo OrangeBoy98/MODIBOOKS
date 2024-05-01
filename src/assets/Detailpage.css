@@ -1,0 +1,300 @@
+/* 책 상세 섹션 스타일 */
+.book-detail-container {
+    display: flex;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.book-image {
+    margin-right: 25px;
+    margin-left: 15px;
+    position: relative;
+}
+
+.book-image img {
+    width: 190px;
+    height: auto;
+    margin-top: 20px;
+
+}
+
+.preview-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3f7ef4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.book-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.book-info small {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.book-info h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #f33800;
+    margin-bottom: 10px;
+}
+
+.author, .publisher {
+    font-size: 15px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px; /* 필요에 따라 조절 */
+    flex-direction: row;
+    border-bottom: 1px solid #d1d1d1;
+    border-top: 1px solid #d1d1d1;
+}
+
+.price-item span {
+    min-width: 10px; /* 레이블 너비 조절 */
+    margin-left: 300px;
+
+}
+
+.price {
+    margin-left: auto; /* 가격을 우측으로 밀어 붙임 */
+}
+.book-pricing {
+    display: flex;
+    flex-direction: column;
+    background: #eeeeee;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    text-align: right;
+
+
+
+}
+.book-event{
+    background: #fdf294;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.book-actions {
+    display: flex;
+    margin-top: 10px;
+}
+
+.book-actions button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #3f7ef4;
+    color: white;
+}
+
+.book-actions button:hover {
+    opacity: 0.85;
+}
+
+.book-details-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #333;
+    border-radius: 4px;
+}
+
+.comments {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.comments p {
+    background-color: #ffffff;
+    border-left: 4px solid #5f5fc4;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.comments textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.comments button {
+    padding: 10px 20px;
+    background-color: #3f7ef4;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.comments button:hover {
+    background-color: #3f7ef4;
+}
+
+.book-introduction, .publisher-review, .author-profile, .table-of-contents {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.book-introduction h2, .publisher-review h2, .author-profile h2, .table-of-contents h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.book-introduction p, .publisher-review p, .author-profile p, .table-of-contents ul {
+    color: #666;
+    font-size: 11px;
+    white-space: pre-wrap;/* 뷰포트 너비에 따라 폰트 크기 조절 */
+    min-width: 400px;
+    max-width: 1000px;
+    word-wrap: break-word;
+
+
+
+
+
+
+
+}
+.book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* 너비를 100%로 설정 */
+}
+
+.favorite-button {
+    padding: 10px 15px;
+    background-color: #3f7ef4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+
+}
+/*.buy-button{*/
+/*    padding: 10px 15px;*/
+/*    background-color: #007bff;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*    margin-right: 8px;*/
+/*}*/
+.book-actions {
+    display: flex;  /* Flexbox를 사용하여 자식 요소를 나란히 배치 */
+    align-items: center; /* 아이템을 수직 방향에서 중앙 정렬 */
+    justify-content: flex-end; /* 아이템을 수평 방향에서 중앙 정렬 */
+
+}
+.favorite-actions{
+    display: flex;  /* Flexbox를 사용하여 자식 요소를 나란히 배치 */
+    align-items: center; /* 아이템을 수직 방향에서 중앙 정렬 */
+    justify-content: flex-end; /* 아이템을 수평 방향에서 중앙 정렬 */
+
+}
+
+.icon-button {
+    background: none; /* 기본 배경 제거 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 커서 스타일 */
+    display: flex; /* 아이콘을 위한 Flexbox */
+    align-items: center; /* 아이콘을 수직 중앙 정렬 */
+    justify-content: center; /* 아이콘을 수평 중앙 정렬 */
+    margin-right: 10px; /* 버튼 사이 간격 */
+}
+.f-icon-button {
+    font-size: 20px;
+    background: none;
+    border: 2px #333333;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.buy-button {
+    background-color: #3f7ef4; /* 파란색 배경 */
+    color: #ffffff; /* 글자색은 흰색 */
+    border: none; /* 테두리 제거 */
+    padding: 10px 20px; /* 내부 여백 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    cursor: pointer; /* 커서 스타일 */
+}
+
+.detail-separator {
+    margin-left: 16px; /* 왼쪽 여백 추가 */
+    margin-right: 16px; /* 오른쪽 여백 추가 */
+}
+.detail-separator2 {
+    margin-left: 12px; /* 왼쪽 여백 추가 */
+    margin-right: 12px; /* 오른쪽 여백 추가 */
+}
+h2 {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid grey;
+}
+
+.purchase-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
