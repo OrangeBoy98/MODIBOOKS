@@ -13,6 +13,7 @@ import styled from 'styled-components';
 import Best from '../components/common/Best';
 import Footer from '../components/common/Footer';
 import MyPage from './MyPage';
+import Services from '../components/support/Services';
 
 const Wrapper = styled.div `
     width: 1000px;
@@ -30,12 +31,9 @@ function MainPage() {
 
 // 별도의 컴포넌트로 레이아웃을 구성하여 useLocation을 사용할 수 있도록 합니다.
 function PageLayout() {
-    const location = useLocation(); // 현재 경로를 가져옵니다.
 
     return (
         <Wrapper>
-            {/* 메인 페이지가 아닌 경우에만 BackButton을 렌더링합니다. */}
-            {location.pathname !== "/" && <BackButton />}
             <Routes>
                 <Route path="/" element={
                     <>
@@ -55,6 +53,7 @@ function PageLayout() {
                 <Route path="/detail3/:id" element={<DetailPage3 />} />
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/category" element={<CategoryPage />} />
+                <Route path="/services" element={<Services />} />
             </Routes>
         </Wrapper>
     );
