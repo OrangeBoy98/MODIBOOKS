@@ -10,6 +10,7 @@ import DetailPage from './DetailPage';
 import styled from 'styled-components';
 import Best from '../components/common/Best';
 import Footer from '../components/common/Footer';
+import Mypage from './Mypage';
 
 const Wrapper = styled.div `
     max-width: 1000px;
@@ -46,6 +47,7 @@ function PageLayout() {
                         <Footer />
                     </>
                 } />
+                <Route path="/mypage" element={<Mypage />} />
                 <Route path="/detail/:id" element={<DetailPage />} />
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/category" element={<CategoryPage />} />

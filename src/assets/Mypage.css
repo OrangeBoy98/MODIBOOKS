@@ -1,0 +1,162 @@
+/* 전체 페이지 컨테이너 */
+.mypage-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 페이지 제목 */
+.mypage-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 도서 목록 섹션 */
+.library-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 도서 아이템 */
+.book {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+/* 도서 이미지 */
+.book img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+/* 도서 상세 정보 */
+.book-details {
+    flex-grow: 1;
+}
+
+/* 도서 제목 */
+.book-details .book-title {
+    font-size: 18px; 
+    font-weight: bold;
+    color: #333; 
+    margin-bottom: 5px; 
+}
+
+/* 도서 저자 */
+.book-details .book-author {
+    font-size: 14px; 
+    color: #666; 
+    font-weight: bold;
+}
+
+/* 삭제 버튼 */
+.delete-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.delete-button:hover {
+    background-color: #0056b3;
+}
+
+/* 섹션 스타일 */
+.section {
+    margin-bottom: 40px;
+}
+
+/* 섹션 제목 */
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 댓글 목록 */
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* 댓글 아이템 */
+.comment-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+/* 댓글 내용 */
+.comment-content {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+/* 댓글 삭제 버튼 */
+.comment-delete-button {
+    padding: 4px 8px;
+    background-color: #ccc; 
+    color: #333; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.comment-delete-button:hover {
+    background-color: #999; 
+    color: #fff; 
+}
+
+/* 모달 스타일 */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(208, 199, 199, 0.5); 
+    width: 300px; 
+    max-width: 90%; 
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000; 
+}
+
+/* 모달 내용 */
+.modal-content {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+/* 모달 텍스트 */
+.modal p {
+    margin-bottom: 20px;
+}
+
+/* 모달 버튼 */
+.modal button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
