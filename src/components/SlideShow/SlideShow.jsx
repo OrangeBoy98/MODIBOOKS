@@ -99,38 +99,48 @@ const SlideShow = () => {
         afterChange: () => setIsDragging(false)
     };
 
-    const items = data.flatMap(category => category.items.map(item => item.details));
+    const items = data.flatMap(
+        category => category.items.map(item => item.details)
+    );
 
     const handleImageClick = (id) => {
-    if (!isDragging) {
-        if (id >= 100 && id < 200) { // 예를 들어 아이디가 3의 배수일 경우
-            navigate(`/detail/${id}`);
-        } else if (id >= 200 && id < 300) {
-            navigate(`/detail2/${id}`);
-        } else {
-            navigate(`/detail3/${id}`);
+        if (!isDragging) {
+            if (id >= 100 && id < 200) { // 예를 들어 아이디가 3의 배수일 경우
+                navigate(`/detail/${id}`);
+            } else if (id >= 200 && id < 300) {
+                navigate(`/detail2/${id}`);
+            } else {
+                navigate(`/detail3/${id}`);
+            }
         }
-    }
-};
-
+    };
 
     return (
         <Wrapper>
             <Slider {...settings}>
-                {items.map((item) => (
-                    <SlideItem
-                        key={item.id}
-                        onMouseEnter={()=>{handleMouseEnter(item.id)}}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={() => handleImageClick(item.id)}
-                    >
-                        <img src={item.src} alt={item.alt} />
-                        <div className="overlay" style={{ opacity: overlayVisible && showId === item.id ? 1 : 0 }}>
-                            <div className="title">{item.alt}</div>
-                            <div className="name">{item.author}</div>
-                        </div>
-                    </SlideItem>
-                ))}
+                {
+                    items.map((item) => (
+                        <SlideItem
+                            key={item.id}
+                            onMouseEnter={() => {
+                                handleMouseEnter(item.id)
+                            }}
+                            onMouseLeave={handleMouseLeave}
+                            onClick={() => handleImageClick(item.id)}>
+                            <img src={item.src} alt={item.alt}/>
+                            <div
+                                className="overlay"
+                                style={{
+                                    opacity: overlayVisible && showId === item.id
+                                        ? 1
+                                        : 0
+                                }}>
+                                <div className="title">{item.alt}</div>
+                                <div className="name">{item.author}</div>
+                            </div>
+                        </SlideItem>
+                    ))
+                }
             </Slider>
         </Wrapper>
     );

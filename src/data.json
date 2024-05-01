@@ -96,5 +96,21 @@
                 }
             }
         ]
+    },
+    {
+        "category": "abc",
+        "items": [
+            {
+                "name": "개정판 | 류츠신 삼체 3부작 3권",
+                "details": {
+                    "id": "301",
+                    "src": "https://img.ridicdn.net/cover/4755000137/xxlarge?dpi=xxhdpi#1",
+                    "alt": "류츠신 삼체 1권",
+                    "author": "류츠신 저",
+                    "publisher": "자음과모음 출판",
+                    "rating": 5
+                }
+            }
+        ]
     }
 ]

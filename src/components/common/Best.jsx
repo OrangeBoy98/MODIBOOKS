@@ -63,37 +63,43 @@ const ItemRating = styled.p`
 `;
 
 function Best() {
-    const navigate = useNavigate(); // useNavigate 훅 사용
-    const allItems = data.reduce((acc, category) => acc.concat(category.items), []);
+  const navigate = useNavigate(); // useNavigate 훅 사용
+  let allItems = data.reduce((acc, category) => acc.concat(category.items), []);
 
-    const handleItemClick = (id) => {
-        if (id >= 100 && id < 200) {
-            navigate(`/detail/${id}`);
-        } else if (id >= 200 && id < 300) {
-            navigate(`/detail2/${id}`);
-        } else {
-            navigate(`/detail3/${id}`);
-        }
-    };
-  
+  // 레이팅이 높은 순서대로 아이템을 정렬
+  allItems = allItems.sort((a, b) => {
+      return parseFloat(b.details.rating) - parseFloat(a.details.rating); // 내림차순 정렬
+  });
+
+  const handleItemClick = (id) => {
+      if (id >= 100 && id < 200) {
+          navigate(`/detail/${id}`);
+      } else if (id >= 200 && id < 300) {
+          navigate(`/detail2/${id}`);
+      } else {
+          navigate(`/detail3/${id}`);
+      }
+  };
+
   return (
-    <Container>
-      <Title>베스트</Title>
-      <Grid>
-        {allItems.map((item, index) => (
-          <Item key={index} onClick={() => handleItemClick(item.details.id)}>
-            <ItemImage src={item.details.src} alt={item.details.alt} />
-            <Rank>{index + 1}</Rank>
-            <ItemDetails>
-              <ItemTitle>{item.name}</ItemTitle>
-              <ItemAuthor>{item.details.author || '저자 정보 없음'}</ItemAuthor>
-              <ItemRating>⭐ {item.details.rating}</ItemRating>
-            </ItemDetails>
-          </Item>
-        ))}
-      </Grid>
-    </Container>
+      <Container>
+          <Title>베스트</Title>
+          <Grid>
+              {allItems.map((item, index) => (
+                  <Item key={index} onClick={() => handleItemClick(item.details.id)}>
+                      <ItemImage src={item.details.src} alt={item.details.alt} />
+                      <Rank>{index + 1}</Rank>
+                      <ItemDetails>
+                          <ItemTitle>{item.name}</ItemTitle>
+                          <ItemAuthor>{item.details.author || '저자 정보 없음'}</ItemAuthor>
+                          <ItemRating>⭐ {item.details.rating}</ItemRating>
+                      </ItemDetails>
+                  </Item>
+              ))}
+          </Grid>
+      </Container>
   );
 }
 
 export default Best;
+
