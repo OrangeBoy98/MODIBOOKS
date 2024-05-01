@@ -26,16 +26,16 @@ const Wrapper = styled.div`
 const SlideItem = styled.div`
     position: relative;
     display: flex;
-    flex-direction: column; // 기존에는 flex 요소가 center 정렬이었지만, column으로 변경하여 이미지 아래에 텍스트가 오도록 함
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px; // 전체 높이를 증가시켜 텍스트에 공간을 제공
+    height: 300px;
     cursor: pointer;
     overflow: hidden;
 
     img {
         width: 100%;
-        height: 100%; // 이미지 높이를 100%에서 80%로 조정하여 아래에 텍스트 공간 마련
+        height: 100%;
         object-fit: cover;
         transition: filter 0.3s ease;
     }
@@ -102,10 +102,17 @@ const SlideShow = () => {
     const items = data.flatMap(category => category.items.map(item => item.details));
 
     const handleImageClick = (id) => {
-        if (!isDragging) {
+    if (!isDragging) {
+        if (id >= 100 && id < 200) { // 예를 들어 아이디가 3의 배수일 경우
             navigate(`/detail/${id}`);
+        } else if (id >= 200 && id < 300) {
+            navigate(`/detail2/${id}`);
+        } else {
+            navigate(`/detail3/${id}`);
         }
-    };
+    }
+};
+
 
     return (
         <Wrapper>

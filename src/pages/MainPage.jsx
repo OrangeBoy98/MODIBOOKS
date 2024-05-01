@@ -7,6 +7,8 @@ import SignUpPage from './SignUpPage';
 import CategoryPage from './CategoryPage';
 import BackButton from '../components/common/BackButton';
 import DetailPage from './DetailPage';
+import DetailPage2 from './DetailPage2';
+import DetailPage3 from './DetailPage3';
 import styled from 'styled-components';
 import Best from '../components/common/Best';
 import Footer from '../components/common/Footer';
@@ -49,6 +51,8 @@ function PageLayout() {
                 } />
                 <Route path="/mypage" element={<Mypage />} />
                 <Route path="/detail/:id" element={<DetailPage />} />
+                <Route path="/detail2/:id" element={<DetailPage2 />} />
+                <Route path="/detail3/:id" element={<DetailPage3 />} />
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/category" element={<CategoryPage />} />
             </Routes>

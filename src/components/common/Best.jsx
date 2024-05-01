@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import data from '../../data.json'; // 경로는 프로젝트 구조에 따라 조정
 
@@ -62,15 +63,25 @@ const ItemRating = styled.p`
 `;
 
 function Best() {
-  const allItems = data.reduce((acc, category) => acc.concat(category.items), []);
+    const navigate = useNavigate(); // useNavigate 훅 사용
+    const allItems = data.reduce((acc, category) => acc.concat(category.items), []);
+
+    const handleItemClick = (id) => {
+        if (id >= 100 && id < 200) {
+            navigate(`/detail/${id}`);
+        } else if (id >= 200 && id < 300) {
+            navigate(`/detail2/${id}`);
+        } else {
+            navigate(`/detail3/${id}`);
+        }
+    };
   
   return (
     <Container>
       <Title>베스트</Title>
       <Grid>
         {allItems.map((item, index) => (
-          <Item key={index}>
-            
+          <Item key={index} onClick={() => handleItemClick(item.details.id)}>
             <ItemImage src={item.details.src} alt={item.details.alt} />
             <Rank>{index + 1}</Rank>
             <ItemDetails>

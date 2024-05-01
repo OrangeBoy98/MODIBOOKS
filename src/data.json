@@ -20,8 +20,8 @@
                     "src": "https://via.placeholder.com/200x300.jpg",
                     "alt": "작품 2",
                     "author": "b",
-                    "publisher": "자음과모음 출판"
-                    
+                    "publisher": "자음과모음 출판",
+                    "rating": 4
                 }
             },
             {
@@ -31,7 +31,8 @@
                     "src": "https://via.placeholder.com/200x300.jpg",
                     "alt": "작품 3",
                     "author": "c 저",
-                    "publisher": "자음과모음 출판"
+                    "publisher": "자음과모음 출판",
+                    "rating": 3
                 }
             },
             {
@@ -41,7 +42,8 @@
                     "src": "https://via.placeholder.com/200x300.jpg",
                     "alt": "작품 4",
                     "author": "d 저",
-                    "publisher": "자음과모음 출판"
+                    "publisher": "자음과모음 출판",
+                    "rating": 2
                 }
             }
         ]
@@ -56,7 +58,8 @@
                     "src": "https://via.placeholder.com/200x300.jpg",
                     "alt": "작품 2",
                     "author": "e 저",
-                    "publisher": "자음과모음 출판"
+                    "publisher": "자음과모음 출판",
+                    "rating": 5
                 }
             },
             {
@@ -66,7 +69,8 @@
                     "src": "https://via.placeholder.com/200x300.jpg",
                     "alt": "작품 3",
                     "author": "f 저",
-                    "publisher": "자음과모음 출판"
+                    "publisher": "자음과모음 출판",
+                    "rating": 2.5
                 }
             },
             {
@@ -76,7 +80,8 @@
                     "src": "https://via.placeholder.com/200x300.jpg",
                     "alt": "작품 4",
                     "author": "g 저",
-                    "publisher": "자음과모음 출판"
+                    "publisher": "자음과모음 출판",
+                    "rating": 4.5
                 }
             },
             {
@@ -86,7 +91,8 @@
                     "src": "https://via.placeholder.com/200x300.jpg",
                     "alt": "작품 1",
                     "author": "h 저",
-                    "publisher": "자음과모음 출판"
+                    "publisher": "자음과모음 출판",
+                    "rating": 3.5
                 }
             }
         ]
