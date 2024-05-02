@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "./Button";
 import db from '../../db.json';
+import BackButton from "../common/BackButton";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -12,6 +13,13 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+`;
+
+const StyledBackButton = styled(BackButton)`
+  position: absolute;
+  top: 10px;
+  left: 10px;
 `;
 
 const Container = styled.div`
@@ -77,6 +85,7 @@ function MemberPage() {
 
     return (
         <Wrapper>
+          <StyledBackButton />
             <h2>회원가입</h2>
             <Container>
                 <InputFieldContainer>

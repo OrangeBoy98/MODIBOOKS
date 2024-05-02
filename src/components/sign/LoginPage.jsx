@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import db from '../../db.json';
 import { useAuth } from "../../Auth/AuthContext";
+import BackButton from "../common/BackButton";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,6 +14,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 `;
 
 const Container = styled.div`
@@ -67,6 +69,12 @@ const LinkButton = styled.div`
   }
 `;
 
+const StyledBackButton = styled(BackButton)`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+`;
+
 function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -84,6 +92,7 @@ function LoginPage() {
 
   return (
     <Wrapper>
+      <StyledBackButton />
       <h2>로그인</h2>
       <Container>
         <Input type="text" value={id} placeholder="아이디" onChange={(e) => setId(e.target.value)} />

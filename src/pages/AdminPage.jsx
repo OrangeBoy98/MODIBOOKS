@@ -5,9 +5,13 @@ import styled from 'styled-components';
 import {data} from '../db.js';
 import BackButton from '../components/common/BackButton.jsx'
 
-const AdminPageContainer = styled.div `
+const AdminPageContainer = styled.div`
   display: flex;
   height: 100%;
+  background: #FAFAFA; // 배경색 변경
+  box-shadow: 0px 0px 10px #E0E0E0; // 그림자 효과 추가
+  border-radius: 10px; // 모서리 둥글게
+  padding: 20px;
 `;
 
 function AdminPage() {

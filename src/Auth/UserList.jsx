@@ -1,18 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-const ListContainer = styled.div `
+const ListContainer = styled.div`
   padding: 20px;
-  background-color: #f0f0f0;
-  border-right: 1px solid #ccc;
+  background-color: #FFFFFF; // 배경색 조정
+  border-right: 2px solid #E0E0E0; // 테두리 스타일 변경
+  width: 30%; // 너비 조정
 `;
 
-const ListItem = styled.div `
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+const ListItem = styled.div`
+  padding: 15px;
+  border-bottom: 1px solid #E0E0E0;
   cursor: pointer;
+  font-size: 16px; // 폰트 크기 조정
   &:hover {
-    background-color: #e9e9e9;
+    background-color: #F5F5F5; // 호버 색상 변경
   }
 `;
 

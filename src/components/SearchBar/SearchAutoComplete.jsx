@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom'; // useNavigate를 import 합니다.
 import data from '../../data.json';  // data.json을 직접 import합니다.
 
 const Input = styled.input`
@@ -33,13 +34,17 @@ const SuggestionItem = styled.li`
 `;
 
 const SearchAutoComplete = () => {
+    const navigate = useNavigate();
     const [inputValue, setInputValue] = useState('');
     const [suggestions, setSuggestions] = useState([]);
 
     // 데이터 처리를 위한 useEffect
     useEffect(() => {
         const altTexts = data.reduce((acc, category) => {
-            const itemsAlts = category.items.map(item => item.details.alt);
+            const itemsAlts = category.items.map(item => ({
+                alt: item.details.alt, // 텍스트
+                id: item.details.id // 고유 ID
+            }));
             return acc.concat(itemsAlts);
         }, []);
         setSuggestions(altTexts);
@@ -51,7 +56,7 @@ const SearchAutoComplete = () => {
     useEffect(() => {
         if (inputValue) {
             const filtered = suggestions.filter(
-                suggestion => suggestion.toLowerCase().includes(inputValue.toLowerCase())
+                suggestion => suggestion.alt.toLowerCase().includes(inputValue.toLowerCase())
             );
             setFilteredSuggestions(filtered);
             setShowSuggestions(true);
@@ -65,8 +70,25 @@ const SearchAutoComplete = () => {
     };
 
     const handleSuggestionClick = (suggestion) => {
-        setInputValue(suggestion);
+        setInputValue(suggestion.alt);
         setShowSuggestions(false);
+        navigateBasedOnId(suggestion.id);
+    };
+
+    const navigateBasedOnId = (id) => {
+        if (id >= 100 && id < 200) {
+            navigate(`/detail/${id}`);
+        } else if (id >= 200 && id < 300) {
+            navigate(`/detail2/${id}`);
+        } else {
+            navigate(`/detail3/${id}`);
+        }
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter' && filteredSuggestions.length > 0) {
+            handleSuggestionClick(filteredSuggestions[0]);
+        }
     };
 
     return (
@@ -75,15 +97,16 @@ const SearchAutoComplete = () => {
                 type="text"
                 value={inputValue}
                 onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
                 placeholder="Search here..."/> {
                 showSuggestions && (
                     <SuggestionsList>
                         {filteredSuggestions.length
                             ? filteredSuggestions.map((suggestion, index) => (
                                 <SuggestionItem key={index} onClick={() => handleSuggestionClick(suggestion)}>
-                                    {suggestion}
+                                    {suggestion.alt}
                                 </SuggestionItem>
-                              ))
+                            ))
                             : <SuggestionItem></SuggestionItem>
                         }
                     </SuggestionsList>
