@@ -20,6 +20,13 @@
         "name":"김철수",
         "number":"010-2222-3333",
         "email":"aaaa@naver.com"
+      },
+      {
+        "id":"root",
+        "password":"root",
+        "name":"root",
+        "number":"000-0000-0000",
+        "email":"root@root.root"
       }
     ]
   }  

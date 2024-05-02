@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { IoPersonOutline } from "react-icons/io5";
 import { PiBooks } from "react-icons/pi";
+import { CiLogin } from "react-icons/ci";
+import { CiLogout } from "react-icons/ci";
 import SearchAutoComplete from '../SearchBar/SearchAutoComplete';
+import { useAuth } from '../../Auth/AuthContext';
 
 const HeaderWrapper = styled.header`
     position: fixed;
@@ -46,14 +49,24 @@ const StyledIcon = styled.div`
 
 function Header() {
     const navigate = useNavigate();
+    const { user, logout } = useAuth();  // 로그인 상태 확인
 
     return (
         <HeaderWrapper>
             <Logo onClick={() => navigate('/')}>RIDIBOOKS</Logo>
             <SearchAutoComplete />
             <IconsWrapper>
-                <StyledIcon><PiBooks onClick={() => navigate('/mypage')}/></StyledIcon>
-                <StyledIcon><IoPersonOutline onClick={() => navigate('/signup')}/></StyledIcon>
+                <StyledIcon><PiBooks onClick={() => navigate('/mybook')}/></StyledIcon>
+                {user ? (
+                    <StyledIcon><IoPersonOutline onClick={() => navigate('/mypage')}/></StyledIcon>
+                ) : (
+                    <StyledIcon><IoPersonOutline onClick={() => navigate('/signup')}/></StyledIcon>
+                )}
+                {user ? (
+                    <StyledIcon><CiLogout onClick={logout}/></StyledIcon>  // 로그아웃 아이콘 표시
+                ) : (
+                    <StyledIcon><CiLogin onClick={() => navigate('/signup')}/></StyledIcon>  // 로그인 아이콘 표시
+                )}
             </IconsWrapper>
         </HeaderWrapper>
     );

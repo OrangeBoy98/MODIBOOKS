@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { IoMenu } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa";
 import styled from 'styled-components';
+import { useAuth } from '../../Auth/AuthContext';
 
 // 기존 NavWrapper와 StyledIcon
 const NavWrapper = styled.nav`
@@ -30,7 +31,7 @@ const StyledIcon = styled.div`
 const DropdownMenu = styled.div`
     position: absolute;
     top: 100%;
-    width: 250px;
+    width: 270px;
     right: 0;
     background-color: white;
     border: 1px solid #ccc;
@@ -49,6 +50,7 @@ const StyledLink = styled(Link)`
 `;
 
 function Navigation() {
+    const { user, isAdmin } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
     const toggleContainer = useRef(null);
 
@@ -78,7 +80,11 @@ function Navigation() {
                     <DropdownMenu>
                         <StyledLink to="/category" onClick={() => setIsOpen(false)}>카테고리</StyledLink>
                         <StyledLink to="/services" onClick={() => setIsOpen(false)}>고객센터</StyledLink>
-                        <StyledLink to="/contact" onClick={() => setIsOpen(false)}>이름없음</StyledLink>
+                        {isAdmin ? (
+                            <StyledLink to="/admin-page" onClick={() => setIsOpen(false)}>회원정보관리</StyledLink>
+                        ) : (
+                            <div onClick={(e) => e.preventDefault()}>접근권한없음</div> // 관리자가 아니면 클릭 불가
+                        )}
                     </DropdownMenu>
                 )}
             </div>

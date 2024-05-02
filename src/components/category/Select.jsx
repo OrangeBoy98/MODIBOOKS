@@ -3,7 +3,7 @@ import '../../assets/Category.css';
 
 const books = {
   '소설': [
-    { image: "https://via.placeholder.com/110x140.jpg",  title: 'Book Title 1',  author: 'Author 1', description: 'Description 1', link: "https://www.naver.com/" },
+    { image: "https://via.placeholder.com/90x110.jpg",  title: 'Book Title 1',  author: 'Author 1', description: 'Description 1', link: "https://www.naver.com/" },
     { image: "https://via.placeholder.com/90x110.jpg",  title: 'Book Title 2',  author: 'Author 2', description: 'Description 2', link: "https://www.naver.com/" },
     { image: "https://via.placeholder.com/90x110.jpg",  title: 'Book Title 3',  author: 'Author 3', description: 'Description 3', link: "https://www.naver.com/" }
   ],

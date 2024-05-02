@@ -10,11 +10,14 @@ import DetailPage3 from './DetailPage3';
 import styled from 'styled-components';
 import Best from '../components/common/Best';
 import Footer from '../components/common/Footer';
-import MyPage from './MyPage';
+import MyBook from './MyBook';
 import Services from '../components/support/Services';
 import LoginPage from '../components/sign/LoginPage';
 import Checkbox from '../components/sign/CheckBox';
 import MemberPage from '../components/sign/MemberPage';
+import { AuthProvider } from '../Auth/AuthContext';
+import MyPage from './MyPage';
+import AdminPage from './AdminPage';
 
 const Wrapper = styled.div `
     width: 1000px;
@@ -25,7 +28,9 @@ const Wrapper = styled.div `
 function MainPage() {
     return (
         <Router>
-            <PageLayout />
+            <AuthProvider>
+                <PageLayout />
+            </AuthProvider>
         </Router>
     );
 }
@@ -48,7 +53,9 @@ function PageLayout() {
                         <Footer />
                     </>
                 } />
+                <Route path="/admin-page" element={<AdminPage />} />
                 <Route path="/mypage" element={<MyPage />} />
+                <Route path="/mybook" element={<MyBook />} />
                 <Route path="/detail/:id" element={<DetailPage />} />
                 <Route path="/detail2/:id" element={<DetailPage2 />} />
                 <Route path="/detail3/:id" element={<DetailPage3 />} />

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import db from '../../db.json' // db.json 파일을 불러옵니다.
 //import DiaryEditor from "../page/DiaryEditor";
+import { useAuth } from "../../Auth/AuthContext";
 
 const Wrapper = styled.div`
 padding: 16px;
@@ -37,24 +38,33 @@ const Input = styled.input`
   border-radius: 5px;
 `;
 
-function LoginPage(props) {
+function LoginPage() {
+  const { login } = useAuth();
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const handleLogin = () => {
-    // db.json 파일에서 사용자 정보를 찾아 로그인합니다.
-    const user = db.user.find((user) => user.id === id&&user.password===password);
-    if (user) {
-      // 사용자 정보가 일치하면 로그인 성공 처리
+    if (login(id, password, db.user)) {
       alert("로그인 성공!");
-      console.log("아이디:" + id);
-      console.log("비밀번호:" + password);
-      navigate("/");
+      navigate("/");  // Redirect to home after successful login
     } else {
-      // 사용자 정보가 일치하지 않으면 로그인 실패 처리
       alert("아이디 또는 비밀번호가 일치하지 않습니다.");
     }
   };
+  // const handleLogin = () => {
+  //   // db.json 파일에서 사용자 정보를 찾아 로그인합니다.
+  //   const user = db.user.find((user) => user.id === id&&user.password===password);
+  //   if (user) {
+  //     // 사용자 정보가 일치하면 로그인 성공 처리
+  //     alert("로그인 성공!");
+  //     console.log("아이디:" + id);
+  //     console.log("비밀번호:" + password);
+  //     navigate("/");
+  //   } else {
+  //     // 사용자 정보가 일치하지 않으면 로그인 실패 처리
+  //     alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+  //   }
+  // };
   return (
     <Wrapper>
         <h2>로그인</h2>

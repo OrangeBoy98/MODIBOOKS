@@ -1,0 +1,33 @@
+export const data = {
+    user: [
+      {
+        "id": "ccc",
+        "password": "abcd",
+        "name": "곽노찬",
+        "number": "010-1234-5678",
+        "email": "abcd@naver.com"
+      },
+      {
+        "id": "b",
+        "password": "1234",
+        "name": "차은우",
+        "number": "010-1111-2222",
+        "email": "qwer@naver.com"
+      },
+      {
+        "id": "andy",
+        "password": "3333",
+        "name": "김철수",
+        "number": "010-2222-3333",
+        "email": "aaaa@naver.com"
+      },
+      {
+        "id": "root",
+        "password": "root",
+        "name": "root",
+        "number": "000-0000-0000",
+        "email": "root@root.root"
+      }
+    ]
+  }
+  
