@@ -47,11 +47,16 @@
   margin-bottom: 20px;  /*책들 사이의 수직 간격 조정*/
   /* margin-bottom 값을 조정하여 책들 사이의 간격을 늘리거나 줄일 수 있음*/
   /*이 값을 증가시키면 간격이 넓어지고, 감소시키면 간격이 좁아짐 */ 
+  .info-row {
+  margin-bottom: 10px; /* 각 행의 하단에 10px의 마진 추가 */
+  }
+  pointer-events: none;
+  cursor: default;
 }
 
 .book img {
   width: 110px;  /* 이미지 크기 조정 */
-  height: 140px;
+  height: 110px;
   margin-right: 20px;  /* 이미지와 텍스트 사이 간격 */
   /* 이미지와 텍스트 사이의 간격을 조절하고 싶다면 이 값을 조정*/
 }
@@ -61,6 +66,16 @@
   flex-direction: column;  /* 텍스트를 세로로 정렬 */
 }
 
+
+.value {
+  overflow: hidden;          /* 넘치는 텍스트 숨기기 */
+  text-overflow: ellipsis;   /* 넘치는 텍스트를 ...으로 표현 */
+}
+
+.info-row {
+  margin-bottom: 10px; /* 각 행의 하단에 10px의 마진 추가 */
+}
+
 book-title, .book-author, .book-description {
   margin-bottom: 5px;
 }
@@ -68,4 +83,22 @@ book-title, .book-author, .book-description {
 hr {
   margin-top: 0;
   margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 100%;
+  }
+  .books-section {
+    width: 100%;
+  }
+}
+.book img, .book-info, .info-row {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.label, .value {
+  pointer-events: auto;
+  cursor: pointer;
 }
