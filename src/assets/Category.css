@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  font-family: Arial, sans-serif;
+  padding-top: 60px;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.category {
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px; /* 카테고리 폰트 크기 변경 */
+}
+
+.active {
+  color: blue;
+}
+
+.spacer {
+  height: 40px;
+}
+
+.books-section {
+  width: 80%;
+  padding: 20px;
+}
+
+.category-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;  /* 책 목록을 위에서 아래로 정렬 */
+}
+
+.book {
+  display: flex;
+  align-items: start;  /* 이미지와 텍스트를 상단에서 정렬 */
+  margin-bottom: 20px;  /*책들 사이의 수직 간격 조정*/
+  /* margin-bottom 값을 조정하여 책들 사이의 간격을 늘리거나 줄일 수 있음*/
+  /*이 값을 증가시키면 간격이 넓어지고, 감소시키면 간격이 좁아짐 */ 
+}
+
+.book img {
+  width: 110px;  /* 이미지 크기 조정 */
+  height: 140px;
+  margin-right: 20px;  /* 이미지와 텍스트 사이 간격 */
+  /* 이미지와 텍스트 사이의 간격을 조절하고 싶다면 이 값을 조정*/
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;  /* 텍스트를 세로로 정렬 */
+}
+
+book-title, .book-author, .book-description {
+  margin-bottom: 5px;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 20px;
+}

@@ -10,6 +10,8 @@ const Container = styled.div`
 const Title = styled.h2`
   font-weight: bold;
   text-align: left;
+  text-decoration: none; // 텍스트 밑줄 제거
+  border-bottom: none; // 밑줄을 만들 수 있는 하단 테두리 제거
 `;
 
 const Grid = styled.div`

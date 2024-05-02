@@ -1,8 +1,9 @@
 /* 전체 페이지 컨테이너 */
 .mypage-container {
     max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
+    padding-top: 60px;
+    margin: 0 auto;
 }
 
 /* 페이지 제목 */
@@ -160,3 +161,9 @@
 .modal button:hover {
     background-color: #0056b3;
 }
+/* 댓글 호버 */
+.comment-content:hover {
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s ease-out;
+  }

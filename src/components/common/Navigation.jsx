@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMenu } from "react-icons/io5";
+import { FaAngleDown } from "react-icons/fa";
 import styled from 'styled-components';
 
 // 기존 NavWrapper와 StyledIcon
@@ -15,6 +16,7 @@ const NavWrapper = styled.nav`
     paddingRight: 20px;
     fontSize: 16px;
     fontFamily: 'Arial, sans-serif';
+    padding-top: 60px;
 `;
 
 const StyledIcon = styled.div`
@@ -68,7 +70,7 @@ function Navigation() {
             <div style={{ position: 'relative' }}>
                 <div onClick={() => setIsOpen(!isOpen)}>
                     <StyledIcon>
-                        <IoMenu />
+                        {isOpen ? <FaAngleDown /> : <IoMenu />}
                         <span>메뉴</span>
                     </StyledIcon>
                 </div>

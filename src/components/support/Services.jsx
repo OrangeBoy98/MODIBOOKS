@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from '../common/Header';
 
 function Services() {
     const [htmlContent, setHtmlContent] = useState('');
@@ -12,7 +13,12 @@ function Services() {
             });
     }, []);
 
-    return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+    return (
+        <div>
+            <Header />
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        </div>
+    );
 }
 
 export default Services;

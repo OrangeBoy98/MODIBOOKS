@@ -6,6 +6,7 @@ import AuthorProfile from '../components/detail/AuthorProfile';
 import TableOfContents from '../components/detail/TableOfContents';
 import Comments from '../components/detail/Comments';
 import '../assets/Detailpage.css';
+import Header from '../components/common/Header';
 
 const DetailPage = () => {
     const bookData = {
@@ -112,6 +113,7 @@ const DetailPage = () => {
 
     return (
         <div className="Detailpage">
+            <Header />
             <BookDetail book={bookData} />
             <BookIntroduction introduction={introductionText} />
             <PublisherReview review={reviewText} />

@@ -3,6 +3,7 @@ import LibrarySection from '../components/mypage/LibrarySection';
 import CommentsSection from '../components/mypage/CommentsSection';
 import Modal from 'react-modal';
 import '../assets/Mypage.css'; 
+import Header from '../components/common/Header';
 
 const MyPage = () => {
     const [favoriteBooks, setFavoriteBooks] = useState([
@@ -40,7 +41,9 @@ const MyPage = () => {
     };
 
     return (
-        <div className='mypage-container'>
+        <div>
+            <Header />
+            <div className='mypage-container'>
             <h1 className='mypage-heading'>마이페이지</h1>
             <div className='library-section'>
                 <LibrarySection books={favoriteBooks} onDeleteBook={handleDeleteBook} />
@@ -60,6 +63,7 @@ const MyPage = () => {
                     <button onClick={handleCloseModal}>닫기</button>
                 </div>
             </Modal>
+        </div>
         </div>
     );
 };

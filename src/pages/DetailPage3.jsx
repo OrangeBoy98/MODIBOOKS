@@ -6,7 +6,7 @@ import AuthorProfile from '../components/detail/AuthorProfile';
 import TableOfContents from '../components/detail/TableOfContents';
 import Comments from '../components/detail/Comments';
 import '../assets/Detailpage.css';
-
+import Header from '../components/common/Header';
 
 function DetailPage3() {
     // 여기에 책 정보, 소개, 서평, 저자 정보, 목차, 댓글 데이터가 있다고 가정합니다.
@@ -90,7 +90,7 @@ function DetailPage3() {
 
     return (
             <div className="Detailpage">
-
+                <Header />
                 <BookDetail3 book={bookData}/>
                 <BookIntroduction introduction={introductionText}/>
                 <PublisherReview review={reviewText}/>
