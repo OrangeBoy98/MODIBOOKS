@@ -22,9 +22,10 @@ const MyBook = () => {
     //모달
     const [showModal, setShowModal] = useState(false);  
     const [popupMessage, setPopupMessage] = useState(''); 
-
+    
     // 삭제 함수 
     const handleDeleteBook = (bookId) => {
+        console.log(bookId);
         setFavoriteBooks(favoriteBooks.filter(book => book.id !== bookId));
         setPopupMessage('삭제되었습니다'); 
         setShowModal(true); 
@@ -47,7 +48,6 @@ const MyBook = () => {
             <div className='library-section'>
                 <LibrarySection books={favoriteBooks} onDeleteBook={handleDeleteBook} />
             </div>
-
             <div className="comments-section">
                 <CommentsSection comments={comments} onDeleteComment={handleDeleteComment} />
             </div>

@@ -21,7 +21,7 @@
 }
 
 /* 도서 아이템 */
-.book {
+.mbook {
     display: flex;
     margin-bottom: 20px;
     border-bottom: 1px solid #ccc;
@@ -29,7 +29,7 @@
 }
 
 /* 도서 이미지 */
-.book img {
+.mbook img {
     width: 100px;
     height: auto;
     margin-right: 20px;
@@ -37,12 +37,12 @@
 }
 
 /* 도서 상세 정보 */
-.book-details {
+.mbook-details {
     flex-grow: 1;
 }
 
 /* 도서 제목 */
-.book-details .book-title {
+.mbook-details .book-title {
     font-size: 18px; 
     font-weight: bold;
     color: #333; 
@@ -50,7 +50,7 @@
 }
 
 /* 도서 저자 */
-.book-details .book-author {
+.mbook-details .book-author {
     font-size: 14px; 
     color: #666; 
     font-weight: bold;
@@ -132,7 +132,7 @@
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    z-index: 1000; 
+    z-index: 10; 
 }
 
 /* 모달 내용 */
