@@ -31,6 +31,10 @@ const Logo = styled.h1`
     cursor: pointer;
 `;
 
+const ColoredText = styled.span`
+    color: ${({ color }) => color};
+`;
+
 // 아이콘 버튼들을 위한 컨테이너 스타일 정의
 const IconsWrapper = styled.div`
     display: flex;
@@ -53,7 +57,7 @@ function Header() {
 
     return (
         <HeaderWrapper>
-            <Logo onClick={() => navigate('/')}>RIDIBOOKS</Logo>
+            <Logo onClick={() => navigate('/')}>MODIBOOKS</Logo>
             <SearchAutoComplete />
             <IconsWrapper>
                 <StyledIcon><PiBooks onClick={() => navigate('/mybook')}/></StyledIcon>

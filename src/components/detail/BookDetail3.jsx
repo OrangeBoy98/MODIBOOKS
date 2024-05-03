@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaRegHeart, FaRegListAlt } from 'react-icons/fa';
+import { FaHeart, FaRegHeart, FaRegListAlt } from 'react-icons/fa';
 import { BsBasket } from 'react-icons/bs';
 import { SlPresent } from 'react-icons/sl';
 
 
 function BookDetail3({ book }) {
     const [purchaseComplete, setPurchaseComplete] = useState(false);
+    const [isFavorited, setIsFavorited] = useState(false);  // 즐겨찾기 상태 추가
+    const [showFavoritePopup, setShowFavoritePopup] = useState(false);  // 팝업 상태 추가
     const navigate = useNavigate(); // useNavigate를 사용
 
     const handlePurchase = () => {
@@ -17,12 +19,25 @@ function BookDetail3({ book }) {
     };
 
     const goToFavorite = () => {
-        navigate('/favorites'); // 'favorites' 페이지로 이동
+        setIsFavorited(!isFavorited);  // 즐겨찾기 상태 토글
+        setShowFavoritePopup(true);  // 팝업 표시
+        setTimeout(() => {
+            setShowFavoritePopup(false);  // 3초 후 팝업 숨기기
+        }, 3000);
     };
+    const confirmAndNavigate = () => {
+        setShowFavoritePopup(false);
+        navigate('/mybook');
+    };
+    
+const closePopup = () => {
+    setShowFavoritePopup(false);
+};
 
     const goToWishlist = () => {
-        navigate('/wishlist'); // 'wishlist' 페이지로 이동
+        navigate('/category'); // 'wishlist' 페이지로 이동
     };
+
 
     return (
         <div className="book-detail-container">
@@ -32,8 +47,8 @@ function BookDetail3({ book }) {
             </div>
             <div className="book-info">
                 <div className="favorite-actions">
-                    <button className="f-icon-button" onClick={goToFavorite}>
-                        <FaRegHeart />
+                <button className="f-icon-button" onClick={goToFavorite}>
+                        {isFavorited ? <FaHeart /> : <FaRegHeart />}
                     </button>
                     <button className="f-icon-button" onClick={goToWishlist}>
                         <FaRegListAlt />
@@ -86,6 +101,16 @@ function BookDetail3({ book }) {
                 </div>
             </div>
             {purchaseComplete && <div className="purchase-popup">구매가 완료되었습니다.</div>}
+            {showFavoritePopup && (
+    <div className="favorite-popup">
+        <div className="popup-message">즐겨찾기에 추가되었습니다.</div>
+        <div className="popup-buttons">
+            <button className="confirm-button" onClick={confirmAndNavigate}>확인</button>
+            <button className="cancel-button" onClick={closePopup}>취소</button>
+        </div>
+    </div>
+)}
+
         </div>
     );
 }

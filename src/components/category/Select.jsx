@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../assets/Category.css';
+import { Link } from 'react-router-dom';
 
 const books = {
   '경제': [
@@ -104,6 +105,16 @@ function Select() {
         <h2 className="category-title">{selectedCategory}</h2>
         <div className="books">
           {books[selectedCategory].map(book => (
+            <Link 
+            to={
+              book.title === '개정판 | 류츠신 삼체 3부작 1권' ? '/detail/101' :
+              book.title === '개정 번역판 | 해리 포터와 마법사의 돌' ? '/detail2/201' :
+              book.title === '컬트' ? '/detail3/301' : '/other'
+            } 
+            key={book.title} 
+            className="book" 
+            style={{ textDecoration: 'none' }}
+          >
             <a href={book.link} key={book.title} className="book" style={{ textDecoration: 'none' }}>
               <img src={book.image} alt={`Cover of ${book.title}`} />
               <div className="book-info">
@@ -121,6 +132,7 @@ function Select() {
               </div>
               </div>
             </a>
+            </Link>
           ))}
         </div>
       </div>

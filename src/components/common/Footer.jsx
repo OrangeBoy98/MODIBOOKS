@@ -15,7 +15,7 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
     return (
         <FooterWrapper>
-            © 2024 RIDIBOOKS. All rights reserved.
+            © 2024 MODIBOOKS. All rights reserved.
         </FooterWrapper>
     );
 }

@@ -18,6 +18,8 @@ import MemberPage from '../components/sign/MemberPage';
 import { AuthProvider } from '../Auth/AuthContext';
 import MyPage from './MyPage';
 import AdminPage from './AdminPage';
+import FindId from '../components/sign/FindId';
+import FindPassword from '../components/sign/FindPassword';
 
 const Wrapper = styled.div `
     width: 1000px;
@@ -53,6 +55,8 @@ function PageLayout() {
                         <Footer />
                     </>
                 } />
+                <Route path="/find-id" element={<FindId />} />
+                <Route path="/find-password" element={<FindPassword />} />
                 <Route path="/admin-page" element={<AdminPage />} />
                 <Route path="/mypage" element={<MyPage />} />
                 <Route path="/mybook" element={<MyBook />} />

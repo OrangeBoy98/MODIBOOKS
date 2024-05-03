@@ -76,11 +76,15 @@ const StyledBackButton = styled(BackButton)`
 `;
 
 function LoginPage() {
+  
   const { login } = useAuth();
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-
+  const[hidepw,setHidepw]=useState(false)
+  const toggleHidePw = () =>{
+    setHidepw(!hidepw);
+  }
   const handleLogin = () => {
     if (login(id, password, db.user)) {
       alert("로그인 성공!");
@@ -96,9 +100,14 @@ function LoginPage() {
       <h2>로그인</h2>
       <Container>
         <Input type="text" value={id} placeholder="아이디" onChange={(e) => setId(e.target.value)} />
-        <Input type="password" value={password} placeholder="비밀번호" onChange={(e) => setPassword(e.target.value)} />
+        <Input type={hidepw?"password":"text"} value={password} placeholder="비밀번호" onChange={(e) => setPassword(e.target.value)} />
         <ButtonStyled title="로그인" onClick={handleLogin} />
         <ButtonStyled title="회원가입" onClick={() => navigate("/member-page")} />
+        <button 
+          type="button" onClick={(e)=>toggleHidePw(e.target.value)}
+          style={{position:"absolute",top:"80px",right:"30px",backgroundColor:"white",
+          border:"1px solid",borderRadius:"4px",height:"30px",cursor:"pointer",
+          backgroundColor: "#007bff",color: "#fff"}}>숨기기</button>
         <HelpLinks>
           <LinkButton onClick={() => navigate("/find-password")}>비밀번호 찾기</LinkButton>
           <LinkButton onClick={() => navigate("/find-id")}>아이디 찾기</LinkButton>
