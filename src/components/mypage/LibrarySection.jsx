@@ -7,7 +7,7 @@ const LibrarySection = ({ books, onDeleteBook }) => {
         <div className="library-section">
             <h2 className="section-title">내 서재</h2>
             {books.map(book => (
-                <div key={book.id} className="mbook">
+                <div key={book.id} className="mybook">
                     <img src={book.image} alt={book.title} />
                     <div className="book-details">
                         <p className="book-title">{book.title}</p>
